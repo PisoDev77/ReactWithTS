@@ -4,7 +4,11 @@ import "./TodoList.css";
 
 export default function TodoList() {
 
-  const [todo, setTodo] = useState("");
+  const [todoInput, setTodoInput] = useState("");
+
+  const handleSubmit = () => {
+
+  }
 
   return (
     <>
@@ -12,6 +16,9 @@ export default function TodoList() {
         <h1 className="todolist-title">개의 할일</h1>
 
         <TodoForm
+          setTodoInput={setTodoInput}
+          onSubmit={handleSubmit}
+          todoInput={todoInput}
         />
         
         <section className="todos-list">
