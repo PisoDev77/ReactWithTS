@@ -25,10 +25,15 @@ export default function TodoList() {
       setTodoInput("");
   }
 
+  const getRemainTodos = () => {
+    const remain = todos.filter((todo)=>!todo.isDone)
+    return remain.length;
+  };
+
   return (
     <>
       <article className="todolist-container">
-        <h1 className="todolist-title"><b>{todos.length}</b>개의 할일</h1>
+        <h1 className="todolist-title"><b>{getRemainTodos()}</b>개의 할일</h1>
 
         <TodoForm
           setTodoInput={setTodoInput}
