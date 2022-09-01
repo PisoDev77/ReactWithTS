@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import TodoList from "./TodoList/case1/TodoList";
+import Header from "./react/header/Header";
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
 
         return <TodoList />;
 
+      case "react-shop-test":
+        return <Header />;
       default:
         return;
     }
@@ -26,6 +29,7 @@ function App() {
       <main className="App">
         <div>
           <button type="button" onClick={()=>setTodoCase("todolist-case1")}>TodoList Case1</button>
+          <button type="button" onClick={()=>setTodoCase("react-shop-test")}>react-shop-test</button>
         </div>
         {
           setTodoList(todocase)
