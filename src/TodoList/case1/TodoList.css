@@ -1,0 +1,17 @@
+
+.todolist-container{
+
+    box-sizing: border-box;
+    margin-top: 30px;
+
+    min-width: 400px;
+    width: 95%;
+    
+    background-color: #fff;
+    box-shadow:  1px 1px 10px #e8e8e8,
+             -1px -1px 10px #ffffff;
+
+    padding: 1rem;
+    border-radius: 20px;
+
+}

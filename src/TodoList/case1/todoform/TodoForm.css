@@ -1,0 +1,28 @@
+
+.todo-form{
+    display: flex;
+    flex-flow: row nowrap;
+
+
+    padding: 16px;
+}
+.todo-form > button[type="submit"] {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.todo-form > label{
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+}
+#todo {
+
+    text-indent: 8px;
+    flex: 1;
+    font-size: 1.12rem;
+
+    border:1px solid #ccc;
+}
