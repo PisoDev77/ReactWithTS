@@ -28,7 +28,7 @@ export default function TodoList() {
   return (
     <>
       <article className="todolist-container">
-        <h1 className="todolist-title">개의 할일</h1>
+        <h1 className="todolist-title"><b>{todos.length}</b>개의 할일</h1>
 
         <TodoForm
           setTodoInput={setTodoInput}
