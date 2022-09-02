@@ -30,6 +30,28 @@ export default function TodoList() {
     return remain.length;
   };
 
+  const handleDone = (id:number) => {
+    
+    const newTodos = todos.map( todo => {
+
+      if(todo.id === id){
+        return(
+          {
+            ...todo,
+            isDone: !todo.isDone
+          }
+        )
+      }
+      return todo;
+    });
+
+    setTodos(newTodos);    
+  }
+  const handleDel = (id:number) => {
+    const newTodos = todos.filter(todo=>todo.id !== id);
+    setTodos(newTodos);
+  }
+
   return (
     <>
       <article className="todolist-container">
@@ -50,7 +72,7 @@ export default function TodoList() {
                   <span>전체삭제</span>
                   <span>전체완료</span>
                 </div>
-              <Todos todos={todos}/> 
+              <Todos todos={todos} onDoneToggle={(id)=>handleDone(id)} onDelClicked={(id)=>handleDel(id)}/> 
             </>
           }
           

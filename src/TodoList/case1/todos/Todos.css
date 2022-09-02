@@ -12,8 +12,18 @@
         padding: 16px;
         border: none;
     }
+
+    @keyframes doneFade{
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+    
     .todos > li .done-btn{
         background: url("../../../check.svg") no-repeat 50% 50%;
+    }
+    .todos > li .done-btn.DONE{
+        background: url("../../../donecheck.svg") no-repeat 50% 50%;
+        animation: doneFade 500ms forwards;
     }
     .todos > li .content{
         flex: 1;

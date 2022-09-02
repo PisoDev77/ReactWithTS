@@ -5,9 +5,11 @@ import "./Todos.css";
 
 export interface TodoListProps{
     todos:TodoType[]
+    onDoneToggle: (id:number) => void
+    onDelClicked: (id:number) => void
 }
 
-export default function Todos({todos}:TodoListProps){
+export default function Todos({todos,onDoneToggle,onDelClicked}:TodoListProps){
 
 
     return(
@@ -18,7 +20,7 @@ export default function Todos({todos}:TodoListProps){
                 {
                     todos.map((todo)=>{
                         return(
-                            <TodoItem todo={todo}/>
+                            <TodoItem key={todo.id} todo={todo} onDoneToggle={()=>onDoneToggle(todo.id)} onDelClicked={()=>onDelClicked(todo.id)}/>
                         );
                     })
                 }

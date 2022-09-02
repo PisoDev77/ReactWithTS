@@ -2,23 +2,31 @@ import { TodoType } from "../TodoList";
 
 type todoProp = {
     todo: TodoType;
+    onDoneToggle: (id:number) => void;
+    onDelClicked: (id:number) => void;
 }
 
-export default function TodoItem({todo}:todoProp){
+export default function TodoItem({todo,onDoneToggle,onDelClicked}:todoProp){
 
 
     const handleDone = () => {
-        console.log("DONE CHCK");
+        onDoneToggle(todo.id);
     };
     const handleDel = () => {
-        console.log("DONE DEL");
+        onDelClicked(todo.id);
     };
+
+    const doneClassName = () => {
+        const done = todo.isDone ? "DONE" : "";
+        return "done-btn " + done;
+    }
 
 
     return(
 
-        <li key={todo.id}>
-            <button onClick={()=>handleDone()} className="done-btn"></button>
+        <li>
+            <button onClick={()=>handleDone()} 
+            className={doneClassName()}></button>
             <p className="content">{todo.content}</p>
             <button onClick={()=>handleDel()} className="del-btn"></button>
         </li>
