@@ -1,6 +1,9 @@
 import { TodoType } from "../TodoList";
+import TodoItem from "./TodoItem";
 
-interface TodoListProps{
+import "./Todos.css";
+
+export interface TodoListProps{
     todos:TodoType[]
 }
 
@@ -13,9 +16,9 @@ export default function Todos({todos}:TodoListProps){
         <>
             <ul className="todos">
                 {
-                    todos.map((todo, idx)=>{
+                    todos.map((todo)=>{
                         return(
-                            <li key={idx + todo.content}>{todo.content}</li>
+                            <TodoItem todo={todo}/>
                         );
                     })
                 }

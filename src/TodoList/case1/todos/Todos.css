@@ -1,0 +1,26 @@
+.todos{
+    list-style-type: none;
+}
+
+.todos > li{
+    margin-top: 8px;
+
+    display: flex;
+}
+
+    .todos > li button{
+        padding: 16px;
+        border: none;
+    }
+    .todos > li .done-btn{
+        background: url("../../../check.svg") no-repeat 50% 50%;
+    }
+    .todos > li .content{
+        flex: 1;
+        text-indent: 1em;
+    }
+    .todos > li .del-btn{
+        background: url(../../../delete.svg) no-repeat 50% 50%;
+    }
+
+
