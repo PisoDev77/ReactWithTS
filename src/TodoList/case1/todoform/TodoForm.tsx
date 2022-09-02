@@ -15,7 +15,10 @@ export default function TodoForm({todoInput,setTodoInput,onSubmit}:TodoInputProp
   
   const handleSubmit = (e:FormEvent) =>{
     e.preventDefault();
-    onSubmit();
+
+    if(todoInput.trim() !== ""){
+      onSubmit();
+    }
   }
 
   return (
@@ -25,7 +28,7 @@ export default function TodoForm({todoInput,setTodoInput,onSubmit}:TodoInputProp
           <label htmlFor="todo">
             Your Todo
           </label>
-          <input type="text" id="todo" value={todoInput} onChange={(e)=>handleTodoInput(e)}/>
+          <input type="text" id="todo" value={todoInput} onChange={(e)=>handleTodoInput(e)} required/>
           <button type="submit">
             +
           </button>
